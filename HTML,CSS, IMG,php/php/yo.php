@@ -21,7 +21,7 @@ values ( '$tdoc', '$id', '$nome','$nome2','$apellio','$apellio2','$correo','$tel
 
 try {
     $con->query($sql);
-    print "<script> alert (\"Agregado existosamente.\");window.location='../html/registrar.html';</script>";
+    print "<script> alert (\"Agregado existosamente.\");window.location='../html/registar.html';</script>";
 } catch (Exception $e){
     echo $e->getMessage();
 }

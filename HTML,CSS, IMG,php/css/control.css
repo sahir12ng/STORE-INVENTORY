@@ -4,7 +4,7 @@
 
 body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: linear-gradient(135deg,#bbf0e8, #28b390);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(74, 233, 212, 0.7))
     
   }
   

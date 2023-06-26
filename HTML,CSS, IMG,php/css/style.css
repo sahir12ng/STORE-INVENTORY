@@ -4,16 +4,15 @@
 }
 
 .fondo{
-    background-color: #21e184;
+    background-image:  radial-gradient(#444CF7 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#444CF7 0.7000000000000001px, #30a26b 0.7000000000000001px);
 }
 
 .btn{
-    background-color: #21e184;
-    border-color: #21e184;
+    background-image:  radial-gradient(#444CF7 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#444CF7 0.7000000000000001px, #30a26b 0.7000000000000001px);;
 }
 
 .btn:hover{
-    background-color: #21e184;
+    background-image:  radial-gradient(#444CF7 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#444CF7 0.7000000000000001px, #30a26b 0.7000000000000001px);
     border-color:#21e184;
 }
 
@@ -25,6 +24,7 @@ body{
     background-image: url(../img/fondo_registro.jpg);
     background-size: cover;
     justify-content: center;
+    
 }
 
 .overlay
