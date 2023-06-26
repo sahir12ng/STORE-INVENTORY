@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-image:  radial-gradient(#444CF7 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#444CF7 0.7000000000000001px, #30a26b 0.7000000000000001px);
+    font-family: open Sans, sans-serif;
+}
+
+h1{
+     text-align: center;
+     padding: 20px;
+     color: white;
+     font-size: 60px;
+     
+
+}
+
+.conteiner{
+    width: 700px;
+    padding: 50px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 900px rgb(114, 255, 6);
+
+}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.correo{
+    width: 100%;
+    border: none;
+    background: none;
+    border-bottom: solid #222 2px;
+    padding: 25px;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+}
+
+.correo:focus{
+    border-bottom: solid green 1px;
+}
+
+.form_button{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.salir{
+    text-decoration: none;
+    background: red;
+    padding: 5px 20px;
+    color: white;
+    font-size: 30px;
+}
+
+.salir:hover{
+    background: rgb(148, 6, 6);
+}
+
+.enviar{
+    background: rgb(71, 184, 71);
+    padding: 8px 15px;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.enviar:hover{
+    background: green;
+}

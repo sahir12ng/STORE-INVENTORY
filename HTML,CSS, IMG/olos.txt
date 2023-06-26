@@ -1,0 +1,7 @@
+Escalabilidad: SVG es un formato vectorial, lo que significa que las imágenes se pueden escalar sin perder calidad, a diferencia de los formatos de imagen rasterizada como JPG o PNG, que pueden perder calidad y verse pixelados al agrandarlos.
+
+Tamaño del archivo: Los archivos SVG suelen ser más pequeños que las imágenes rasterizadas, especialmente si la imagen es compleja. Esto se debe a que SVG utiliza vectores para representar la imagen, lo que a menudo resulta en un archivo más compacto que los formatos de imagen rasterizada que utilizan píxeles para representar la imagen.
+
+Interactividad: SVG ofrece la posibilidad de incluir elementos interactivos en la imagen, como enlaces, animaciones o elementos de formulario, lo que puede ser útil en aplicaciones web y móviles.
+
+Edición: Como formato vectorial, SVG es más fácil de editar que las imágenes rasterizadas. Los vectores se pueden manipular de forma individual para hacer cambios precisos en la imagen, mientras que la edición de una imagen rasterizada a menudo requiere ajustes imprecisos y adivinanzas.
