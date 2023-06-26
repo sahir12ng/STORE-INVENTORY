@@ -1,0 +1,21 @@
+.logo{
+    width: 60px;
+    height: auto;
+}
+
+.logo2{
+    width: 300px;
+    height: auto;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: rgb(117, 117, 117);
+}
+
+.fondo{
+    background-color: rgb(6, 186, 209);
+}

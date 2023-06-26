@@ -1,0 +1,6 @@
+*, ::before, ::after{
+    margin: 0;
+    box-sizing: border-box;
+} 
+
+/* esto es una pruba para el boton */
