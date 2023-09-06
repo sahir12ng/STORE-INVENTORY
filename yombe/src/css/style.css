@@ -1,0 +1,76 @@
+.logo{
+    width: 80px;
+    height: 80px;
+}
+
+.fondo{
+    background-image:  radial-gradient(#444CF7 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#444CF7 0.7000000000000001px, #30a26b 0.7000000000000001px);
+}
+
+.btn{
+    background-image:  radial-gradient(#444CF7 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#444CF7 0.7000000000000001px, #30a26b 0.7000000000000001px);;
+}
+
+.btn:hover{
+    background-image:  radial-gradient(#444CF7 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#444CF7 0.7000000000000001px, #30a26b 0.7000000000000001px);
+    border-color:#21e184;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    position: fixed;
+    background-image: url(../img/fondo_registro.jpg);
+    background-size: cover;
+    justify-content: center;
+    
+}
+
+.overlay
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: rgba(0, 0, 0, 0.575);
+    position: fixed;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.registro{
+    margin-top: 5px;
+}
+
+.fcc-btn {
+    background-color: #21e184;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+}
+  
+.fcc-btn:hover {
+    background-color: #223094;
+}
+
+.col_1  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+  
+.col_1 img {
+    margin: auto;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 180px;
+    width: 260px;
+    border-radius: 10px;
+}
+

@@ -1,0 +1,96 @@
+ *{
+    margin: 0;
+    padding: 0;
+    display: flexbox;
+
+}
+
+ body {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(74, 233, 212, 0.7));
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  h1 {
+    text-align:center;
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+    
+
+  }
+
+  
+
+  form {
+    width: 1000px;
+    height: 750px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 0 30px rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    margin-top: 50px;
+    
+    
+  }
+
+.imagen-formulario{
+   position: absolute;
+   top: 350px;
+   left: 950px;
+}
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #0c0c0c;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"], 
+  input[type="submit"]{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    
+    
+  }
+
+  input[type="submit"] {
+    background-color: #04ff10 ;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    
+  }
+
+  input[type="submit"]:hover {
+    background-color: #4CAF50;
+  }
+
+ select{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    
+  }
+
+  
+
+ 
+
+  
+
+
+ 

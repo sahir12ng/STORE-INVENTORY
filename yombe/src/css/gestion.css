@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(74, 233, 212, 0.7));
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 50px;
+  }
+
+  h2{
+    font-size: 40px;
+    text-align: center;
+  }
+  
+ 
+  .user-list {
+    height: 900px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px
+  }
+
+  input{
+    color: white;
+    background-color: #30a26b;
+    border-radius: 10px;
+    width: 10%;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  input:hover{
+    background-color: greenyellow;
+  }
+
+ .derecha{
+    text-align: right;
+    margin-right: 95px;
+    font-size: 20px;
+
+ }
+
+ .izquierda{
+    text-align: left;
+    margin-left: 75px;
+    font-size: 20px;
+ }
+
+ .crear{
+    text-align: center;
+    margin-top: 110px;
+    font-size: 25px;
+    
+ }
+
+ hr{
+    width: 100%;
+    border-color: #30a26b;
+    border-width: 2px;
+    
+ }
+
+ .adm{
+    margin-top: -220px;
+    margin-left: 900px ;
+    width: 250px;
+ }
+
+ .empl{
+    margin-top: -250px;
+    margin-right: 1200px;
+    width: 250px;
+    height: 250px;
+    
+ }
+
+

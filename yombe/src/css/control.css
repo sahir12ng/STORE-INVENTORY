@@ -1,0 +1,51 @@
+
+ 
+  
+
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(74, 233, 212, 0.7))
+    
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  .opciones {
+    justify-content: right;
+    align-items: right;
+    display:block;
+
+  }
+  
+  .usuarios, .opciones, .formulario-crear, .formulario-eliminar, .formulario-modificar {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  select, input[type="text"], input[type="password"] {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .formulario-crear .formulario-eliminar .formulario-modificar {
+    display: none;
+    width: 300px;
+    height: 300px;
+  }
+
+
+
+  
