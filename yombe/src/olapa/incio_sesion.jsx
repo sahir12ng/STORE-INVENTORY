@@ -1,4 +1,8 @@
-<body>
+import React from 'react';
+
+function InicioSesion() {
+  return (
+    <body>
   <div class="overlay"></div>
   <section class="container position-absolute top-50 start-50 translate-middle">
             <div class="mt-3 rounded p-5">
@@ -53,3 +57,7 @@
             </div>
   </section>
 </body>
+  );
+}
+
+export default InicioSesion;

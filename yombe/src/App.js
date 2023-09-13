@@ -1,27 +1,38 @@
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+
+
 import './App.css';
 import index from "./css/index.css"
 import normalize from "./css/normalize.css"
-import inicio_sesion from "./olapa/incio_sesion"
+import InicioSesion from "./olapa/incio_sesion"
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <title>Store Inventory</title>
-    <link rel="stylesheet" href="css/normalize.css"/>
-      <body>
-      <header className="hero"> 
+    return (
+      <div className="App">
+        <title>Store Inventory</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <body>
+          <header className="hero">
+            <Router>
+              <div className="hero__container container">
+                <div className="hero__texts">
+                  <h1 className="hero__title">Store  Inventory</h1>
+                  <p className="hero__copy">Una hoja en blanco es una historia nueva</p>
+                  <Routes>
+                  <Route path="/olapa/inicio_sesion" element={<InicioSesion />} />
 
-        <div className="hero__container container">
+                  </Routes>
+                     <Link to="/olapa/inicio_sesion">
+                         <button>Ir</button>
+                    </Link>
 
-            <div className="hero__texts">
-                <h1 className="hero__title">Store  Inventory</h1>
-                <p className="hero__copy">Una hoja en blanco es una historia nueva</p> 
-                <a href="html/inicio_sesion.php" className="hero__cta"><strong>Ingresar</strong></a>
-            </div>
-
-            <img src="https://github.com/sahir12ng/STORE-INVENTORY/blob/main/HTML,CSS,%20IMG,php/img/1aad26e24060499974d848369d1b946c.jpg?raw=true" className="hero__img"/> 
-        </div>
-    </header>
+                </div>
+                <img src="https://github.com/sahir12ng/STORE-INVENTORY/blob/main/HTML,CSS,%20IMG,php/img/1aad26e24060499974d848369d1b946c.jpg?raw=true" className="hero__img" />
+              </div>
+            </Router>
+          </header>
 
     <main className="main"> 
 
