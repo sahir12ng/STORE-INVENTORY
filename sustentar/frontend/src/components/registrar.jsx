@@ -1,5 +1,5 @@
 import React from 'react';
-import './style_registro.css'; // Import your CSS file here
+//import '../css/style_registro.css'; // Import your CSS file here
 
 function Registro() {
   return (
