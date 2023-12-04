@@ -1,0 +1,51 @@
+###
+POST http://localhost:3000/api/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "t_doc_usuario":"654c291772945c19288d4564",
+    "id_usuario":"32",
+    "nombre1":"olos",
+    "nombre2":"pol",
+    "apellido1":"si",
+    "apellido2":"olos",
+    "correo_usuario":"pol",
+    "telefono":"si",
+    "username":"olos",
+    "contraseña":"pol",
+    "Id_pregunta_seg":"3",
+    "ver_p_seg":"no" 
+
+}
+
+
+
+
+###
+GET  http://localhost:3000/api/user HTTP/1.1
+
+###
+GET  http://localhost:3000/api/user/654412f0cd944da85f2bab54 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/user/654415df512ac0a721587cfa HTTP/1.1
+Content-Type: application/json
+
+{
+    "t_doc_usuario":"654c291772945c19288d4564",
+    "id_usuario":"22",
+    "nombre1":"olos",
+    "nombre2":"pol",
+    "apellido1":"si",
+    "apellido2":"olos",
+    "correo_usuario":"pol",
+    "telefono":"si",
+    "username":"olos",
+    "contraseña":"pol",
+    "Id_pregunta_seg":"3",
+    "ver_p_seg":"no" 
+} 
+
+###
+
+DELETE http://localhost:3000/api/user/65442a11ea390efd4985e146 HTTP/1.1

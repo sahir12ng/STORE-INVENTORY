@@ -1,0 +1,29 @@
+###
+POST http://localhost:3000/api/tipodoc HTTP/1.1
+Content-Type: application/json
+
+{
+    "t_doc":"C.C",
+    "desc_tdoc":"Cedula de Ciudadania",
+    "tdoc_estado":"1"
+
+}
+###
+GET  http://localhost:3000/api/tipodoc HTTP/1.1
+
+###
+GET  http://localhost:3000/api/tipodoc/654974c001661f836b346d81 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/tipodoc/654974c001661f836b346d81 HTTP/1.1
+Content-Type: application/json
+
+{
+    "t_doc":"C.E",
+    "desc_tdoc":"Cedula de extranjeria",
+    "tdoc_estado":"1"
+} 
+
+###
+
+DELETE http://localhost:3000/api/tipodoc/654974c001661f836b346d81 HTTP/1.1

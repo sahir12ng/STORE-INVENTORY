@@ -1,0 +1,27 @@
+###
+POST http://localhost:3000/api/pregunta_seg HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_p_seg":"2",
+    "p_seg":"Segundo apellido de tu madre"
+}
+
+###
+GET  http://localhost:3000/api/pregunta_seg HTTP/1.1
+
+###
+GET  http://localhost:3000/api/pregunta_seg/654a49775d1df51e3f7f8938 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/pregunta_seg/654a49775d1df51e3f7f8938 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_p_seg":"1",
+    "p_seg":"Cedula de extranjeria"
+} 
+
+###
+
+DELETE http://localhost:3000/api/pregunta_seg/654a49775d1df51e3f7f8938 HTTP/1.1

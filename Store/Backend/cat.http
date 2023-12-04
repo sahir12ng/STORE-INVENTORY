@@ -1,0 +1,27 @@
+###
+POST http://localhost:3000/api/categoria HTTP/1.1
+Content-Type: application/json
+
+{
+    "idcategoria":"2",
+    "desc_categoria":"no escolar"
+}
+
+###
+GET  http://localhost:3000/api/categoria HTTP/1.1
+
+###
+GET  http://localhost:3000/api/categoria/654a49845d1df51e3f7f893a HTTP/1.1
+
+###
+PUT http://localhost:3000/api/categoria/654a49845d1df51e3f7f893a HTTP/1.1
+Content-Type: application/json
+
+{
+    "idcategoria":"1",
+    "desc_categoria":"Cedula de extranjeria"
+} 
+
+###
+
+DELETE http://localhost:3000/api/categoria/656d09d07396f319c398c5da HTTP/1.1

@@ -1,0 +1,13 @@
+###
+POST http://localhost:3000/api/producto HTTP/1.1
+Content-Type: application/json
+
+{
+    "Id_producto":"258",
+    "nom_producto":"Colores",
+    "valor_producto":"7500",
+    "disponibilidad_producto":"8",
+    "proveedor_Id_proveedor":"654a48835d1df51e3f7f892c",
+    "Categoria":"654a476faa62f8afd95097ab"
+
+}

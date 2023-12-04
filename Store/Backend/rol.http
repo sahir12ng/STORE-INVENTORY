@@ -1,0 +1,27 @@
+###
+POST http://localhost:3000/api/roles HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_rol":"11",
+    "nomb_rol":"Empleado"
+}
+
+###
+GET  http://localhost:3000/api/roles HTTP/1.1
+
+###
+GET  http://localhost:3000/api/roles/654a48df5d1df51e3f7f8930 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/roles/654a48df5d1df51e3f7f8930 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_rol":"21",
+    "nomb_rol":"Empleado"
+} 
+
+###
+
+DELETE http://localhost:3000/api/roles/654a48df5d1df51e3f7f8930 HTTP/1.1

@@ -1,0 +1,29 @@
+###
+POST http://localhost:3000/api/proveedor HTTP/1.1
+Content-Type: application/json
+
+{
+    "Id_proveedor":"108091034",
+    "nombre_proveedor":"Bic",
+    "direccion_proveedor": "Calle 12 # 34 - 30, Bogotá"
+}
+
+###
+GET  http://localhost:3000/api/proveedor HTTP/1.1
+
+###
+GET  http://localhost:3000/api/proveedor/654a48835d1df51e3f7f892c HTTP/1.1
+
+###
+PUT http://localhost:3000/api/proveedor/654a49355d1df51e3f7f8936 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Id_proveedor":"1080921034",
+    "nombre_proveedor":"Bic",
+    "direccion_proveedor": "Calle 12 # 34 - 30, Bogotá"
+} 
+
+###
+
+DELETE http://localhost:3000/api/proveedor/654a632b716228a28e5fa3d3 HTTP/1.1
