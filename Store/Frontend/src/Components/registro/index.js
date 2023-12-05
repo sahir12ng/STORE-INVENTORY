@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FuncionRegistrarUsuario, FuncionObtenerTipoDoc,FuncionObtenerPreguntasSeguridad } from '../../js/scritp_user';
+import "./Registro.css"
 
 function Registro() {
   const [formulario, setFormulario] = useState({
@@ -77,10 +78,10 @@ const handleSubmit = async (e) => {
 
 return (
   <div>
-    <section className="container">
+    <section className="registro-container">
       <div className="mt-3 p-4">
         <div className="row">
-          <div className="col-12 bg-white rounded-top">
+          <div className="col-12 bg-beige rounded-top">
             <h2 className="fw-bold text-center py-1 mt-4">
               ¿Eres nuevo?<br />Regístrate{' '}
               <i className="fas fa-grin-wink"></i>
@@ -90,7 +91,7 @@ return (
          <div className="col-12">
           <form onSubmit={handleSubmit} autoComplete="off">
             <div className="row">
-              <div className="col-md-6 bg-white p-5 pb-0">
+              <div className="col-md-6 bg-beige p-5 pb-0">
                 <div className="mb-3">
                 <div className="mb-3">
                   <label htmlFor="t_doc_usuario" className="form-label">
@@ -188,7 +189,7 @@ return (
                                 />
                                </div>
                               </div>
-                  <div className="col-md-6 bg-white p-5 pb-0">
+                  <div className="col-md-6 bg-beige p-5 pb-0">
                     <div className="mb-3">
                       <label htmlFor="usuario" className="form-label">
                         <i className="fas fa-user-circle"></i> Nombre De Usuario
@@ -297,17 +298,17 @@ return (
                     </div>
                   </div>
                 </div>
-                <div className="col-12 bg-white mb-3 rounded-bottom ps-5 pe-5">
+                <div className="col-12 mb-3">
                   <div className="d-grid mb-4">
-                    <button type="submit" className="btn btn-primary link">
+                    <button type="submit" className="btn bg-celeste">
                       <i className="fas fa-arrow-circle-left"></i> Registrar
                     </button>
                   </div>
                 </div>
               </form>
-              <div className="col-12 bg-white mb-3 rounded-bottom ps-5 pe-5">
+              <div className="col-12 mb-3">
                 <div className="d-grid mb-4">
-                  <Link to="/" className="btn btn-primary link">
+                  <Link to="/" className="btn bg-celeste">
                     <i className="fas fa-arrow-circle-left"></i> Volver
                   </Link>
                 </div>

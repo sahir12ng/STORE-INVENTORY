@@ -1,42 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { FuncionBuscarProd, FuncionEliminarProd } from '../../js/scritp_prod'; // Asegúrate de tener las funciones correctas
 import { Link } from 'react-router-dom';
+import AppHeader from '../../Components/AppHeader';
+import SideMenu from '../../Components/SideMenu';
+import AppFooter from '../../Components/AppFooter';
+import PageContent from '../../Components/PageContent';
 
 function TablaProductos() {
   const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await FuncionBuscarProd();
-        setProductos(data);
-      } catch (error) {
-        console.error('Error al obtener datos de productos:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const handleDelete = async (prodId) => {
+useEffect(() => {
+  const fetchData = async () => {
     try {
-      await FuncionEliminarProd(prodId);
-      setProductos((prevProductos) => prevProductos.filter((producto) => producto._id !== prodId));
+      const data = await FuncionBuscarProd();
+      setProductos(data);
     } catch (error) {
-      console.error('Error al eliminar producto:', error.message);
+      console.error('Error al obtener datos de productos:', error);
     }
   };
 
-  return (
-    <div className="container mt-5">
+  fetchData();
+}, []);
+
+const handleDelete = async (prodId) => {
+  try {
+    await FuncionEliminarProd(prodId);
+    setProductos((prevProductos) => prevProductos.filter((producto) => producto._id !== prodId));
+  } catch (error) {
+    console.error('Error al eliminar producto:', error.message);
+  } 
+};
+
+return (
+  <>
+    <div className="App">
+    <AppHeader></AppHeader>
+    <div className="SideMenuAndPageContent">
+      <SideMenu></SideMenu>
+      <PageContent/><div className="container mt-5">
       <h1 className="mb-4">Información de Productos</h1>
       
-      <Link to="/crearProducto" className="btn btn-primary mb-3">
+      <Link to="/crearProducto" className="btn btn-azul-oscuro-claro mb-3">
         Crear Nuevo Producto
       </Link>
 
       <table className="table table-bordered">
-        <thead className="table-dark">
+        <thead className="custom-table-header">
           <tr>
             <th>ID</th>
             <th>Nombre Producto</th>
@@ -75,6 +84,12 @@ function TablaProductos() {
         </tbody>
       </table>
     </div>
+    
+    </div>
+    <AppFooter />
+  </div>
+    
+  </>
   );
 }
 

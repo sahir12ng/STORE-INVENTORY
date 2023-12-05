@@ -1,0 +1,47 @@
+.registro-container {
+    background: url('./fondo.jpg') center center fixed; 
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-custom {
+    background-color: #4CAF50; 
+    color: white; 
+    border: 1px solid #4CAF50;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px; 
+}
+  
+.btn-custom:hover {
+    background-color: #45a049; 
+    border: 1px solid #45a049; 
+}
+
+.btn-custom:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.col-12.bg-white {
+    outline: none;
+    box-shadow: none;
+}
+
+.bg-beige {
+    background-color: beige;
+}
+
+.bg-celeste {
+    background-color: #87CEEB;
+    color: #fff;
+    border: 1px solid #87CEEB;
+    transition: background-color 0.3s ease;
+}
+
+.bg-celeste:hover {
+    background-color: #5F9EA0;
+}

@@ -1,47 +1,51 @@
 import React, { useState } from 'react';
 import { FuncionRegistrarProv } from '../../js/scritp_prov';
+import './formpov.css'; 
+import { Link } from 'react-router-dom';
+import AppHeader from '../../Components/AppHeader';
+import AppFooter from '../../Components/AppFooter';
+import SideMenu from '../../Components/SideMenu';
+import PageContent from '../../Components/PageContent';
 
 function ProveedorForm() {
   const [proveedor, setProveedor] = useState({
     Id_proveedor: '',
     nombre_proveedor: '',
     direccion_proveedor: '',
-  });
+});
 
-  const handleChange = (e) => {
+const handleChange = (e) => {
     const { name, value } = e.target;
     setProveedor((prevProveedor) => ({
-      ...prevProveedor,
+      ...prevProveedor, //Utiliza el operador de propagación para copiar todas las propiedades del estado anterior. Esto es importante para no perder las propiedades existentes del estado.
       [name]: value,
     }));
-  };
+};
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const result = await FuncionRegistrarProv(proveedor);
+  try {
+    const result = await FuncionRegistrarProv(proveedor);
 
-      if (result.success) {
-        // Proveedor registrado exitosamente
-        alert(result.message);
-
-        // Puedes hacer alguna acción adicional, como redirigir o limpiar el formulario
-      } else {
-        // Error al registrar proveedor
-        alert(result.message);
-
-        // Puedes imprimir detalles adicionales del error
-        console.error('Detalles del error:', result.data);
-      }
-    } catch (error) {
-      console.error('Error al registrar proveedor:', error.message);
+    if (result.success) {
+      alert(result.message);
+    } else {
+      alert(result.message);
+      console.error('Detalles del error:', result.data);
     }
-  };
+  } catch (error) {
+    console.error('Error al registrar proveedor:', error.message);
+  }
+};
 
-  return (
-    <div className="container d-flex align-items-center justify-content-center vh-100">
-      <div className="card p-4">
+return (
+  <div className="App">
+    <AppHeader></AppHeader>
+      <div className="SideMenuAndPageContent">
+        <SideMenu></SideMenu>
+        <PageContent></PageContent><div className="container-fluid d-flex align-items-center justify-content-center vh-8">
+      <div className="card p-4 custom-card">
         <h2 className="mb-4 text-center">Registrar Proveedor</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -87,8 +91,15 @@ function ProveedorForm() {
             <button type="submit" className="btn btn-primary">Registrar Proveedor</button>
           </div>
         </form>
+        <Link to="/proveedores" className="btn btn-azul-oscuro-claro">
+        regresar
+      </Link>
       </div>
     </div>
+      </div>
+      <AppFooter />
+    </div>
+    
   );
 }
 

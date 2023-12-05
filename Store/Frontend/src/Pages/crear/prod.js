@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FuncionRegistrarProd, FuncionBuscarProdPorId, FuncionBuscarProv, FuncionBuscarCategorias } from '../../js/scritp_prod';
+import AppHeader from '../../Components/AppHeader';
+import AppFooter from '../../Components/AppFooter';
+import SideMenu from '../../Components/SideMenu';
+import PageContent from '../../Components/PageContent';
+import { Link } from 'react-router-dom';
+import "./formpov.css"
+
 
 const FormularioProducto = ({ productoId }) => {
   const [producto, setProducto] = useState({
@@ -9,80 +16,76 @@ const FormularioProducto = ({ productoId }) => {
     disponibilidad_producto: '',
     proveedor_Id_proveedor: '', 
     Categoria: '', 
-  });
+});
 
-  const [proveedores, setProveedores] = useState([]);
-  const [categorias, setCategorias] = useState([]);
+const [proveedores, setProveedores] = useState([]);
+const [categorias, setCategorias] = useState([]);
 
-  useEffect(() => {
-    cargarProveedores();
-    cargarCategorias();
+useEffect(() => {
+  cargarProveedores();
+  cargarCategorias();
 
-    if (productoId) {
-      cargarDatosProducto(productoId);
+  if (productoId) {
+    cargarDatosProducto(productoId);
+  }
+}, [productoId]);
+
+const cargarProveedores = async () => {
+  try {
+    const proveedoresData = await FuncionBuscarProv();
+    setProveedores(proveedoresData);
+  } catch (error) {
+    console.error('Error al cargar proveedores:', error);
+  }
+};
+
+const cargarCategorias = async () => {
+  try {
+    const categoriasData = await FuncionBuscarCategorias();
+    setCategorias(categoriasData);
+  } catch (error) {
+    console.error('Error al cargar categorías:', error);
+  }
+};
+
+const cargarDatosProducto = async (prodId) => {
+  try {
+    const productoExistente = await FuncionBuscarProdPorId(prodId);
+    setProducto(productoExistente);
+  } catch (error) {
+    console.error('Error al cargar datos del producto:', error);
+  }
+};
+
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setProducto((prevProducto) => ({
+    ...prevProducto,
+    [name]: value,
+  }));
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const result = await FuncionRegistrarProd(producto);
+    if (result.success) {
+      alert(result.message);
+    } else {
+      alert(result.message);
+      console.error('Detalles del error:', result.data);
     }
-  }, [productoId]);
+  } catch (error) {
+    console.error('Error al registrar producto:', error.message);
+  }
+};
 
-  const cargarProveedores = async () => {
-    try {
-      const proveedoresData = await FuncionBuscarProv();
-      setProveedores(proveedoresData);
-    } catch (error) {
-      console.error('Error al cargar proveedores:', error);
-    }
-  };
-
-  const cargarCategorias = async () => {
-    try {
-      const categoriasData = await FuncionBuscarCategorias();
-      setCategorias(categoriasData);
-    } catch (error) {
-      console.error('Error al cargar categorías:', error);
-    }
-  };
-
-  const cargarDatosProducto = async (prodId) => {
-    try {
-      const productoExistente = await FuncionBuscarProdPorId(prodId);
-      setProducto(productoExistente);
-    } catch (error) {
-      console.error('Error al cargar datos del producto:', error);
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProducto((prevProducto) => ({
-      ...prevProducto,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const result = await FuncionRegistrarProd(producto);
-
-      if (result.success) {
-        // Producto registrado exitosamente
-        alert(result.message);
-
-        // Puedes hacer alguna acción adicional, como redirigir o limpiar el formulario
-      } else {
-        // Error al registrar producto
-        alert(result.message);
-
-        // Puedes imprimir detalles adicionales del error
-        console.error('Detalles del error:', result.data);
-      }
-    } catch (error) {
-      console.error('Error al registrar producto:', error.message);
-    }
-  };
-
-  return (
-    <div className="container d-flex align-items-center justify-content-center vh-100">
+return (
+  <div className="App">
+    <AppHeader></AppHeader>
+      <div className="SideMenuAndPageContent">
+        <SideMenu></SideMenu>
+        <PageContent></PageContent><div className="container-fluid d-flex align-items-center justify-content-center vh-8">
       <form onSubmit={handleSubmit} className="card p-4">
         <h2 className="mb-4 text-center">{productoId ? 'Editar Producto' : 'Registrar Producto'}</h2>
 
@@ -145,8 +148,15 @@ const FormularioProducto = ({ productoId }) => {
         <div className="text-center">
           <button type="submit" className="btn btn-primary">{productoId ? 'Editar Producto' : 'Registrar Producto'}</button>
         </div>
+        <Link to="/inventory" className="btn btn-azul-oscuro-claro">
+        regresar
+      </Link>
       </form>
     </div>
+      </div>
+      <AppFooter />
+    </div>
+    
   );
 };
 

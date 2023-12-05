@@ -26,8 +26,7 @@ function App() {
         <Route path="crearProveedor" element={<ProveedorForm />} />
         <Route path="/updateProv/:id" element={<EditarProveedorForm />} />
         <Route path="crearProducto" element={<FormularioProducto/>}/>
-        <Route path="/updateProd/:id" element={<EditarProductoForm/>}/>
-        
+        <Route path="/updateProd/:id" element={<EditarProductoForm/>}/>    
       </Routes>
       </>
   );

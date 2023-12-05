@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FuncionEditarProd, FuncionBuscarProdPorId, FuncionBuscarProv, FuncionBuscarCategorias } from '../../js/scritp_prod';
 import { useParams } from 'react-router-dom';
+import AppHeader from '../../Components/AppHeader';
+import AppFooter from '../../Components/AppFooter';
+import SideMenu from '../../Components/SideMenu';
+import PageContent from '../../Components/PageContent';
 
 function EditarProductoForm() {
   const { id } = useParams();
@@ -11,42 +15,40 @@ function EditarProductoForm() {
     disponibilidad_producto: '',
     proveedor_Id_proveedor: '', 
     Categoria: '', 
-  });
+});
 
-  const [proveedores, setProveedores] = useState([]);
-  const [categorias, setCategorias] = useState([]);
+const [proveedores, setProveedores] = useState([]);
+const [categorias, setCategorias] = useState([]);
 
-  useEffect(() => {
-    const cargarDatosProducto = async () => {
-      try {
-        const datosProducto = await FuncionBuscarProdPorId(id);
-
-        if (datosProducto && datosProducto.Id_producto) {
-          setProducto(datosProducto);
-        }
-      } catch (error) {
-        console.error('Error al cargar datos del producto:', error.message);
+useEffect(() => {
+  const cargarDatosProducto = async () => {
+    try {
+      const datosProducto = await FuncionBuscarProdPorId(id);
+      if (datosProducto && datosProducto.Id_producto) {
+        setProducto(datosProducto);
       }
-    };
+    } catch (error) {
+      console.error('Error al cargar datos del producto:', error.message);
+    }
+  };
 
-    const cargarProveedores = async () => {
-      try {
-        const proveedoresData = await FuncionBuscarProv();
-        setProveedores(proveedoresData);
+  const cargarProveedores = async () => {
+    try {
+      const proveedoresData = await FuncionBuscarProv();
+      setProveedores(proveedoresData);
       } catch (error) {
         console.error('Error al cargar proveedores:', error);
       }
     };
 
-    const cargarCategorias = async () => {
-      try {
-        const categoriasData = await FuncionBuscarCategorias();
-        setCategorias(categoriasData);
+  const cargarCategorias = async () => {
+    try {
+      const categoriasData = await FuncionBuscarCategorias();
+      setCategorias(categoriasData);
       } catch (error) {
         console.error('Error al cargar categorías:', error);
       }
-    };
-
+  };
     cargarDatosProducto();
     cargarProveedores();
     cargarCategorias();
@@ -66,15 +68,18 @@ function EditarProductoForm() {
     try {
       await FuncionEditarProd(id, producto);
       alert('Producto editado exitosamente');
-      // No necesitas cargar nuevamente los datos del producto después de la edición
     } catch (error) {
       console.error('Error al editar producto:', error.message);
     }
   };
   
 
-  return (
-    <div className="container d-flex align-items-center justify-content-center vh-100">
+return (
+  <div className="App">
+      <AppHeader></AppHeader>
+      <div className="SideMenuAndPageContent">
+        <SideMenu></SideMenu>
+        <PageContent></PageContent><div className="container d-flex align-items-center justify-content-center vh-95">
       <form onSubmit={handleSubmit} className="card p-4">
         <h2 className="mb-4 text-center">Editar Producto</h2>
 
@@ -157,6 +162,10 @@ function EditarProductoForm() {
         </div>
       </form>
     </div>
+      </div>
+      <AppFooter />
+    </div>
+  
   );
 }
 

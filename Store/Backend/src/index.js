@@ -11,6 +11,26 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const cors = require('cors');
+const path =require("path")
+
+//swagger
+const swaggerUI =require("swagger-ui-express");
+const swaggerJsDoc=require("swagger-jsdoc");
+const swaggerSpec ={
+    definition:{
+        openapi:"3.0.0",
+        info:{
+            title: "Node MongoBD API",
+            version: "1.0.0"
+        },
+        servers:[
+            {
+                url: "http://localhost:3000"
+            }
+        ]
+    },
+    apis: [`${path.join(__dirname,"./routes/*.js")}`],
+};
 
 const app = express();
 
@@ -24,9 +44,15 @@ app.use('/api', queso)
 app.use('/api', quesadilla)
 app.use('/api', pollo)
 app.use('/api',lola)
+app.use(
+    "/api-doc", 
+    swaggerUI.serve, 
+    swaggerUI.setup(swaggerJsDoc(swaggerSpec))
+    );
 
-app.post('/user', (req, res) => {
-    res.send('Crear usuario')
+
+app.get('/user', (req, res) => {
+    res.send('Bienvenido a la api')
   })
   
   
