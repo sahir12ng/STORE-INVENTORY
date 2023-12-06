@@ -9,10 +9,7 @@ router.post('/producto', async (req, res) => {
         const productoGuardado = await nuevoProducto.save();
 
         if (productoGuardado) {
-            // Enviar una respuesta JSON al cliente
             res.status(201).json(productoGuardado);
-
-            // Mostrar una alerta en el servidor (puedes cambiar esto por una notificación en el cliente)
             console.log('Producto guardado correctamente:', productoGuardado);
         } else {
             console.error('Producto no guardado correctamente en la base de datos.');
@@ -22,7 +19,6 @@ router.post('/producto', async (req, res) => {
         console.error('Error al guardar producto:', error);
 
         if (error.name === 'ValidationError') {
-            // Manejar errores de validación de Mongoose
             res.status(400).json({ message: `Error de validación: ${error.message}` });
         } else {
             res.status(500).json({ message: `Error interno del servidor al guardar producto. Detalles: ${error.message}` });

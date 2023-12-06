@@ -5,12 +5,13 @@ import Registro from "./Components/registro";
 import Pol from "./Components/Menu";
 import Dashboard from "./Pages/Dashbaord";
 import Inventory from "./Pages/Inventory";
-import Orders from "./Pages/Orders";
+import UserManagement from "./Pages/Orders";
 import Proveedores from "./Pages/Proveedor";
 import ProveedorForm from "./Pages/crear/crear";
 import EditarProveedorForm from "./Pages/editar/editar";
 import FormularioProducto from "./Pages/crear/prod";
 import EditarProductoForm from "./Pages/editar/prod";
+import ForgotPassword from "./Components/contraseña/pass";
 
 function App() {
   return (
@@ -21,12 +22,13 @@ function App() {
         <Route path="Crear" element={<Registro />} />
         <Route path="pol" element={<Dashboard />} />
         <Route path="inventory" element={<Inventory />} />
-        <Route path="orders" element={<Orders />} />
+        <Route path="orders" element={<UserManagement />} />
         <Route path="Proveedores" element={<Proveedores />} />
         <Route path="crearProveedor" element={<ProveedorForm />} />
         <Route path="/updateProv/:id" element={<EditarProveedorForm />} />
         <Route path="crearProducto" element={<FormularioProducto/>}/>
-        <Route path="/updateProd/:id" element={<EditarProductoForm/>}/>    
+        <Route path="/updateProd/:id" element={<EditarProductoForm/>}/>
+        <Route path="/pass" element={<ForgotPassword/>}/>
       </Routes>
       </>
   );

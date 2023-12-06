@@ -8,6 +8,8 @@ function AppHeader() {
 
   const handleLogout = () => {
     setLoggedIn(false);
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem("userData");
   };
 
   return (
